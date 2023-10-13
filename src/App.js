@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import "./assets/css/style.css";
+import medalData from "./data/dummyData.json";
+import SwitchTab from "./Components/SwitchTab";
+import Chart from "./Components/LineChart";
+import Table from "./Components/Table";
 
 function App() {
+  const [activeTab, setActiveTab] = useState("table");
+
+  const handleChangeTab = (tab) => {
+    setActiveTab(tab);
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <SwitchTab activeTab={activeTab} handleChangeTab={handleChangeTab} />
+
+      {activeTab === "table" ? (
+        <Table medalData={medalData} />
+      ) : (
+        <Chart medalData={medalData} />
+      )}
     </div>
   );
 }
