@@ -4,15 +4,56 @@
   padding: 0;
 }
 
+html,
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fff7ed;
+  font-family: "Inter", sans-serif;
   text-align: center;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/** header **/
+header {
+  height: 150px;
+  background-color: #002b49;
+  width: 100%;
+}
+
+header .detail-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: left;
+}
+
+header .detail-items {
+  color: #ccc;
+  font-size: 17px;
+  font-weight: 600;
+  padding: 10px 20px;
+  border: 2px solid #ccc;
+  margin: 30px 30px;
+  border-radius: 10px;
+  transition: 0.5s;
+}
+header .detail-items:hover {
+  box-shadow: rgba(0, 0, 0, 0.729) 0 5px 40px;
+  transform: translate(2px, 2px);
 }
 
 /** table **/
 table {
   border-collapse: collapse;
   margin: 20px auto;
+  width: 300px;
+  height: 300px;
+  margin-top: 60px;
 }
 
 th,
@@ -29,6 +70,21 @@ tr:nth-child(even) {
   background-color: #f9f9f9;
 }
 
+/** chart **/
+.chart-container {
+  margin: 20px;
+  padding: 20px;
+  border: 2px solid #000;
+  width: 600px;
+  max-width: 80%;
+}
+
+.chart-container h3 {
+  margin-top: 30px;
+  margin-left: 0;
+}
+
+/** switch-tab **/
 .tabs {
   display: flex;
   padding: 24px;
@@ -62,4 +118,19 @@ tr:nth-child(even) {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/* Media query for tablets and small laptops */
+@media screen and (max-width: 992px) {
+  .tab {
+    padding: 8px 16px;
+  }
+}
+
+/* Media query for mobile devices */
+@media screen and (max-width: 768px) {
+  .tab {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
 }

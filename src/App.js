@@ -5,6 +5,7 @@ import medalData from "./data/dummyData.json";
 import SwitchTab from "./Components/SwitchTab";
 import Chart from "./Components/LineChart";
 import Table from "./Components/Table";
+import Header from "./Components/Header";
 
 function App() {
   const [activeTab, setActiveTab] = useState("table");
@@ -14,6 +15,7 @@ function App() {
   };
   return (
     <div className="App">
+      <Header />
       <SwitchTab activeTab={activeTab} handleChangeTab={handleChangeTab} />
 
       {activeTab === "table" ? (
